@@ -81,21 +81,23 @@ router.post('/login', (req, res) => {
 
       if (!user) {
         return res.status(404).json({
-          email: 'user not found'});
-        }
+          email: 'user not found'
+        });
+      }
 
 
       bcrypt.compare(password, user.password)
         .then(isMatch => {
-          if(isMatch) {
+          if (isMatch) {
             res.json({
               msg: 'Success'
             });
           } else {
             return res.status(404).json({
-                password: 'Password incorrect'});
-              }
-           });
+              password: 'Password incorrect'
+            });
+          }
         });
     });
+});
 module.exports = router;
