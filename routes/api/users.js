@@ -6,7 +6,11 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-const User = require("../../models/User");
+// Load Input Validation
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
+
+const User = require('../../models/User');
 
 
 // @route  GET api/users/test
@@ -21,13 +25,13 @@ router.get("/test", (req, res) => res.json({
 // @desc    Register user
 // @access  Public
 router.post("/register", (req, res) => {
-  // const { errors, isValid } = validateRegisterInput(req.body);
+  const { errors, isValid } = validateRegisterInput(req.body);
   // res.json({ msg: "register works" });
 
-  // // Check Validation
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   User.findOne({
     email: req.body.email
@@ -76,6 +80,14 @@ router.post("/register", (req, res) => {
 // @acsess Public
 
 router.post('/login', (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
+  // res.json({ msg: "register works" });
+
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 
@@ -85,9 +97,8 @@ router.post('/login', (req, res) => {
     .then(user => {
 
       if (!user) {
-        return res.status(404).json({
-          email: 'user not found'
-        });
+        errors.email = 'User not found';
+        return res.status(404).json(errors);
       }
 
 
@@ -114,28 +125,15 @@ router.post('/login', (req, res) => {
             //   msg: 'Success'
             // });
           } else {
-            return res.status(404).json({
-              password: 'Password incorrect'
-            });
+            errors.password = 'Password incorrect';
+            return res.status(404).json(errors);
           }
         });
     });
 });
 
-// // @route  POST api/users/current
-// // @desc   return current User
-// // @acsess Privite
-//
-// router.get('/current', passport.authenticate('jwt', {
-//     session: false
-//   }),
-//   (req, res) => {
-//     res.json({
-//       msg: 'Success'
-//     });
-//   });
 
-  // @route   GET api/users/current
+// @route   GET api/users/current
 // @desc    Return current user
 // @access  Private
 router.get(
