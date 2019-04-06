@@ -44,20 +44,20 @@ const Profilechema = new Schema({
       required: true
     },
     location: {
-      type: String,
+      type: String
     },
     from: {
       type: Date,
       required: true
     },
-    from: {
-      type: Date,
+    to: {
+      type: Date
     },
     current: {
       type: Boolean,
       default: false
     },
-    decription: {
+    description: {
       type: String
     }
   }],
@@ -78,8 +78,8 @@ const Profilechema = new Schema({
       type: Date,
       required: true
     },
-    from: {
-      type: Date,
+    to: {
+      type: Date
     },
     current: {
       type: Boolean,
