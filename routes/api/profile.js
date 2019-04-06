@@ -14,6 +14,68 @@ router.get("/test", (req, res) => res.json({
   msg: "profile works"
 }));
 
+router.get('/all', (req, res) => {
+  const errors = {};
+
+  Profile.find()
+  .populate('user', ['name','avatar'])
+  .then(profiles => {
+    if (!profiles) {
+      errors.noprofile = 'There are no profiles';
+      return res.status(404).json(errors);
+    }
+    res.json(profiles);
+  })
+  .catch(err => res.status(404).json({ profile: 'There are no profiles' }));
+
+});
+
+router.post('/expernce', passport.authenticate('jwt', {session: false}), (req, res) => {
+  Profile.findOne({user; res.user.id})
+  .then(profile => {
+    const newExp = {
+      title: req.body.title,
+      company: req.body.company,
+      location: req.body.location,
+      from: req.body.from,
+      to: req.body.to,
+      current: req.body.current,
+      description: req.body.description
+    }
+  })
+  .then()
+  .catch();
+});
+
+router.get('/handle/:handle', (req, res) => {
+  const errors = {};
+  Profile.findOne({ handle: req.params.handle })
+  .populate('user', ['name', 'avatar'])
+  .then(profile => {
+    if (!profile) {
+      errors.noprofile = 'There is no profile for this user';
+      req.status(404).json(errors);
+    }
+    res.json(profile);
+  })
+  .catch(err => res.status(404).json(err));
+});
+
+router.get('/user/:user_id', (req, res) => {
+  const errors = {};
+  Profile.findOne({ user: req.params.user_id })
+  .populate('user', ['name', 'avatar'])
+  .then(profile => {
+    if (!profile) {
+      errors.noprofile = 'There is no profile for this user';
+      req.status(404).json(errors);
+    }
+    res.json(profile);
+  })
+  .catch(err => res.status(404).json({profile: 'There is no profile for this user'}));
+});
+
+
 router.get('/', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
@@ -52,7 +114,7 @@ router.post('/', passport.authenticate('jwt', {
     if (req.body.status) profileFields.status = req.body.status;
     if (req.body.githubusername) profileFields.githubusername = req.body.githubusername;
     if (typeof req.body.skills !== 'undefined') {
-      profileFields.skills = req.body.skills.splitt(',');
+      profileFields.skills = req.body.skills.split(',');
     }
     profileFields.social = {};
 
@@ -82,15 +144,16 @@ Profile
       Profile.findOne({
           handle: profileFields.handle
         })
+        .populate('user', ['name','avatar'])
         .then(profile => {
           if (profile) {
             errors.handle = 'That handle already exists';
             res.status(400).json(errors);
           }
-          new Profile(profileFields).then(profile => res.json(profile));
+          new Profile(profileFields).save().then(profile => res.json(profile));
         });
     }
-  })
+  });
 });
 
 
