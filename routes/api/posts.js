@@ -5,8 +5,8 @@ const passport = require('passport');
 
 router.get("/test", (req, res) => res.json({ msg: "posts works" }));
 
-router.post('/', passport.authenticate('jwt', {session: false}), (req, req) => {
-  consst newPost = new Post({
+router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const newPost = new Post({
     text: req.body.text,
     name: req.body.name,
     avatar: req.body.avatar,
