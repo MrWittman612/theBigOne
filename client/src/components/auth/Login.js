@@ -1,15 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // import PropTypes from 'prop-types'
 
 class Login extends Component {
-  constructor {
+  constructor() {
     super();
     this.state = {
       email: '',
       password: '',
       errors: {}
-    }
+    };
+    // this.onChange = this.onChange().bind(this);
   }
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value});
+  }
+  onSubmit = e => {
+  e.preventDefault();
+
+  const user = {
+    email: this.state.email,
+    password: this.state.password,
+  };
+  console.log(user);
+  // this.props.registerUser(newUser, this.props.history);
+}
+
+
   render () {
     return (
       <div className="login">
@@ -18,7 +35,7 @@ class Login extends Component {
            <div className="col-md-8 m-auto">
              <h1 className="display-4 text-center">Log In</h1>
              <p className="lead text-center">Sign in to your DevConnector account</p>
-             <form action="dashboard.html">
+             <form onSubmit={this.onSubmit}>
                <div className="form-group">
                  <input
                    type="email"

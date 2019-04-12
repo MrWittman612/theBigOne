@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
+
 // import PropTypes from 'prop-types'
 
 class Register extends Component {
-  constructor {
+  constructor() {
     super();
     this.state = {
       name: '',
@@ -10,11 +12,25 @@ class Register extends Component {
       password: '',
       password2: '',
       errors: {}
-    }
+    };
+    // this.onChange = this.onChange().bind(this);
   }
-  onChange(e) {
-    this.setState({[e.target.name]});
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value});
   }
+
+  onSubmit = e => {
+  e.preventDefault();
+
+  const newuser = {
+    name: this.state.name,
+    email: this.state.email,
+    password: this.state.password,
+    password2: this.state.password2
+  };
+  console.log(newuser);
+  // this.props.registerUser(newUser, this.props.history);
+}
 
   render () {
     return (
@@ -24,14 +40,15 @@ class Register extends Component {
           <div className="col-md-8 m-auto">
             <h1 className="display-4 text-center">Sign Up</h1>
             <p className="lead text-center">Create your DevConnector account</p>
-            <form action="create-profile.html">
+            <form onSubmit={this.onSubmit}>
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control form-control-lg"
                   placeholder="Name"
-                  name="name"
                   value={this.state.name}
+                  onChange={this.onChange}
+                  name="name"
                 />
               </div>
               <div className="form-group">
@@ -40,6 +57,7 @@ class Register extends Component {
                   className="form-control form-control-lg"
                   placeholder="Email Address"
                   value={this.state.email}
+                  onChange={this.onChange}
                   name="email"
                 />
                 <small className="form-text text-muted">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
@@ -50,6 +68,7 @@ class Register extends Component {
                   className="form-control form-control-lg"
                   placeholder="Password"
                   value={this.state.password}
+                  onChange={this.onChange}
                   name="password"
                   />
               </div>
