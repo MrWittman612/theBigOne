@@ -10,7 +10,7 @@ class Navbar extends Component {
     this.props.logoutUser();
   }
   render () {
-    const { isAuthenicated, user} = this.props.auth;
+    const { isAuthenticated, user} = this.props.auth;
     const authLinks = (
   <ul className="navbar-nav ml-auto">
     <li className="nav-item">
@@ -74,7 +74,7 @@ const guestLinks = (
                </div>
              </div>
            </nav>
-    )
+    );
   }
 }
 
