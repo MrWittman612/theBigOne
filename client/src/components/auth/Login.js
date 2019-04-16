@@ -67,7 +67,7 @@ onChange = e => {
                  onChange={this.onChange}
                  error={errors.email}
                 />
-                 <TextFieldGroup
+                <TextFieldGroup
                    placeholder="Password"
                    name="password"
                    type="password"
