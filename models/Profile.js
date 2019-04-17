@@ -31,7 +31,7 @@ const Profilechema = new Schema({
   bio: {
     type: String
   },
-  githubuser: {
+  githubusername: {
     type: String
   },
   experience: [{
@@ -85,7 +85,7 @@ const Profilechema = new Schema({
       type: Boolean,
       default: false
     },
-    decription: {
+    description: {
       type: String
     }
   }],
