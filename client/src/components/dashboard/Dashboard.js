@@ -19,7 +19,7 @@ if (profile === null || loading) {
   dashboardContent = <Spinner />;
 } else {
   if (Object.keys(profile).length > 0) {
-    dashboardContent = <h4></h4>;
+    dashboardContent = <h4>dispaly profile</h4>;
   } else {
     dashboardContent = (
       <div>

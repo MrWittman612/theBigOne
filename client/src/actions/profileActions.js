@@ -19,11 +19,11 @@ export const getCurrentProfile = () => dispatch => {
     )
     .catch(err =>
       dispatch({
-        types: GET_PROFILE,
+        type: GET_PROFILE,
         payload: {}
       })
-    )
-}
+    );
+};
 
 export const createProfile = (profileData, history) => dispatch => {
     axios
