@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link,withRouter} from 'react-router-dom'
-import TextFieldGroup from './common/TextFieldGroup'
-import TextAreaFieldGroup from './common/TextAreaFieldGroup'
+import TextFieldGroup from '../common/TextFieldGroup'
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {addExperience} from '../../actions/profileActions'
@@ -126,7 +126,7 @@ class AddExperience extends Component {
                    error={errors.description}
                    info="Tell us about the position"
                    />
-                   <Input
+                 <input
                    type="submit"
                    value="Submit"
                    className="btn btn-info btn-block mt-4"
@@ -141,8 +141,8 @@ class AddExperience extends Component {
 
 
 AddExperience.propTypes = {
-  addExperience: PropTypes.func.isRequired
-  profile: PropTypes.object.isRequired
+  addExperience: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link,withRouter} from 'react-router-dom';
-import TextFieldGroup from './common/TextFieldGroup';
-import TextAreaFieldGroup from './common/TextAreaFieldGroup';
+import TextFieldGroup from '../common/TextFieldGroup';
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {addEducation} from '../../actions/profileActions';
@@ -28,7 +28,8 @@ class AddEducation extends Component {
     if (nextProps.errors) {
       this.setState({errors: nextProps.errors});
     }
-  }onSubmit(e) {
+  }
+  onSubmit(e) {
     e.preventDefault();
 
     const expData = {
@@ -88,20 +89,20 @@ class AddEducation extends Component {
                  />
                  <h6>From Date</h6>
                  <TextFieldGroup
-                   name="from"
-                   type="date"
-                   value={this.state.from}
-                   onChange={this.onChange}
-                   error={errors.from}
+                     name="from"
+                     type="date"
+                     value={this.state.from}
+                     onChange={this.onChange}
+                     error={errors.from}
                   />
                   <h6>To Date</h6>
                   <TextFieldGroup
-                    name="to"
-                    type="date"
-                    value={this.state.to}
-                    onChange={this.onChange}
-                    error={errors.to}
-                    disabled={this.state.disabled ? 'disabled' : ''}
+                      name="to"
+                      type="date"
+                      value={this.state.to}
+                      onChange={this.onChange}
+                      error={errors.to}
+                      disabled={this.state.disabled ? 'disabled' : ''}
                    />
                    <div className="form-check mb-4">
                     <input
@@ -114,22 +115,22 @@ class AddEducation extends Component {
                       id="current"
                      />
                      <label
-                     htmlFor="current"
-                     className="form-check-label"
+                       htmlFor="current"
+                       className="form-check-label"
                      >Current Job</label>
-                   </div>
-                   <TextAreaFieldGroup
-                   placeholder="Program Description"
-                   name="description"
-                   value={this.state.description}
-                   onChange={this.onChange}
-                   error={errors.description}
-                   info="Tell us about the program that you were in"
-                   />
-                   <Input
-                   type="submit"
-                   value="Submit"
-                   className="btn btn-info btn-block mt-4"
+                  </div>
+                  <TextAreaFieldGroup
+                     placeholder="Program Description"
+                     name="description"
+                     value={this.state.description}
+                     onChange={this.onChange}
+                     error={errors.description}
+                     info="Tell us about the program that you were in"
+                  />
+                  <input
+                     type="submit"
+                     value="Submit"
+                     className="btn btn-info btn-block mt-4"
                    />
             </form>
           </div>
@@ -141,8 +142,8 @@ class AddEducation extends Component {
 
 
 AddEducation.propTypes = {
-  addEducation: PropTypes.func.isRequired
-  profile: PropTypes.object.isRequired
+  addEducation: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 }
 
