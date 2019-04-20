@@ -40,7 +40,7 @@ class AddExperience extends Component {
       current: this.state.current,
       description: this.state.description,
     };
-    this.props.AddExperience(expData, this.props.history);
+    this.props.addExperience(expData, this.props.history);
   }
 
   onChange(e) {
@@ -119,12 +119,12 @@ class AddExperience extends Component {
                      >Current Job</label>
                    </div>
                    <TextAreaFieldGroup
-                   placeholder="Job Description"
-                   name="description"
-                   value={this.state.description}
-                   onChange={this.onChange}
-                   error={errors.description}
-                   info="Tell us about the position"
+                     placeholder="Job Description"
+                     name="description"
+                     value={this.state.description}
+                     onChange={this.onChange}
+                     error={errors.description}
+                     info="Tell us about the position"
                    />
                  <input
                    type="submit"
