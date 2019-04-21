@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
-import React from '../../validation/is-empty';
+import isEmpty from '../../validation/is-empty';
 
 
 class ProfileItem extends Component {
@@ -49,6 +49,6 @@ class ProfileItem extends Component {
 
 ProfileItem.propTypes = {
   profile: PropTypes.object.isRequired
-}
+};
 
 export default ProfileItem;

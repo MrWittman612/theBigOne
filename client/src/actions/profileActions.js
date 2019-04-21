@@ -112,7 +112,24 @@ export const getProfiles = () => dispatch => {
     .catch(err =>
       dispatch({
         type: GET_PROFILES,
-        payload: {}
+        payload: null
+      })
+    );
+};
+
+export const getProfileByHandle = handle => dispatch => {
+  axios
+    .delete(`/api/profile/handle/${handle}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
       })
     );
 };
