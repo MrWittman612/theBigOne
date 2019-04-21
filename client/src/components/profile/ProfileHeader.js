@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import isEmptyfrom '../../validation/is-empty'
+import isEmpty from '../../validation/is-empty'
 
-class ProfileHeader extends Component({
+class ProfileHeader extends Component {
 
-  render () {
+  render() {
     const { profile } = this.props;
     return (
       <div className="row">
@@ -94,6 +94,6 @@ class ProfileHeader extends Component({
     </div>
     )
   }
-})
+}
 
-export default ProfileHeader
+export default ProfileHeader;

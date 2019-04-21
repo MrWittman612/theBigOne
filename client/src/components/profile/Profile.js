@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import Spinner from '../common/Spinner';
 import ProfileHeader from './ProfileHeader'
 import ProfileAbout from './ProfileAbout'
 import ProfileCreds from './ProfileCreds'
@@ -11,7 +12,7 @@ import {getProfileByHandle} from '../../actions/profileActions'
 class Profile extends Component {
   componentDidMount() {
     if (this.props.match.params.handle) {
-      this.props..getProfileByHandle(this.props.match.params.handle);
+      this.props.getProfileByHandle(this.props.match.params.handle);
     }
   }
 
@@ -65,10 +66,10 @@ render() {
 Profile.propTypes = {
   getProfileByHandle: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
-}
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
   profile: this.state
-}
+});
 
 export default connect(mapStateToProps,{getProfileByHandle})(Profile);
