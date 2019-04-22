@@ -146,7 +146,7 @@ router.post('/', passport.authenticate('jwt', {
           Profile.findOne({
               handle: profileFields.handle
             })
-            .populate('user', ['name', 'avatar'])
+            // .populate('user', ['name', 'avatar'])
             .then(profile => {
               if (profile) {
                 errors.handle = 'That handle already exists';

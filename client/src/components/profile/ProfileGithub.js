@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 class ProfileGithub extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       clientId: 'da2db6f4ef18fc3db40f',
@@ -24,7 +24,7 @@ class ProfileGithub extends Component {
     )
     .then(res => res.json())
     .then(data => {
-      if (this.refs.myRefs) {
+      if (this.refs.myRef) {
         this.setState({
           repos: data
         });
@@ -35,7 +35,7 @@ class ProfileGithub extends Component {
 
 
 render() {
-  const {repos} = this.props;
+  const {repos} = this.state;
   const repoItems = repos.map(repo => (
     <div key={repo.id} className="card card-body mb-2">
       <div className="row">
