@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {connect} from ' react-redux'
+import {connect} from 'react-redux'
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup'
 import {addComment} from '../../actions/postActions'
 
@@ -15,8 +15,8 @@ class CommentForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors) {
       this.setState({
         errors: newProps.errors
       });
@@ -48,7 +48,29 @@ onChange(e) {
   render () {
     const {errors} = this.state;
   return (
-
+    <div className="post-form mb-3">
+    <div className="card card-info">
+      <div className="card-header bg-info text-white">
+        Make a comment...
+      </div>
+      <div className="card-body">
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <TextAreaFieldGroup
+              placeholder="Reply to post"
+              name="text"
+              value={this.state.text}
+              onChange={this.onChange}
+              error={errors.text}
+            />
+          </div>
+          <button type="submit" className="btn btn-dark">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
   );
   }
 }
@@ -57,7 +79,7 @@ CommentForm.propTypes = {
   addPost: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   postId: PropTypes.string.isRequired,
-  errors: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

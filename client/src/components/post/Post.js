@@ -12,7 +12,7 @@ class Post extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.id);
   }
-  render () {
+  render() {
   const {post,loading} = this.props.post;
   let postContent;
   if (post === null || loading || Object.key(post).length === 0) {
@@ -28,18 +28,18 @@ class Post extends Component {
   }
   return (
     <div className="post">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-12">
-        <Link to="/feed" className="btn btn-light mb-3">
-          Back To Feed
-        </Link>
-        {postContent}
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <Link to="/feed" className="btn btn-light mb-3">
+              Back To Feed
+            </Link>
+            {postContent}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-  )
+    )
   }
 }
 

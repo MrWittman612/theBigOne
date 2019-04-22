@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import PostItem from './PostItem'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import PostItem from './PostItem';
 
 class PostFeed extends Component {
-  render () {
+  render() {
     const {posts} = this.props;
 
-    return posts.map(post => <PostItem key={post.id} post={post} />)
+    return posts.map(post => <PostItem key={post.id} post={post} />);
   }
 }
 

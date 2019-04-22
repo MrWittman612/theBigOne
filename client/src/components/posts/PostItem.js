@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import classnames from 'classnames'
-import {Link} from 'react-router-dom'
-import {deletePost, addLike, removeLike} from '../../actions/postActions'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import classnames from 'classnames';
+import {Link} from 'react-router-dom';
+import {deletePost, addLike, removeLike} from '../../actions/postActions';
 
 class PostItem extends Component {
   onDeleteClick(id) {
@@ -96,7 +96,7 @@ PostItem.propTypes = {
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

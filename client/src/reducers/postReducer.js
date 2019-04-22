@@ -1,7 +1,8 @@
 import {
   ADD_POST,
   GET_POST,
-  PROFILE_LOADING,
+  GET_POSTS,
+  POST_LOADING,
   DELETE_POST
 } from '../actions/types';
 
@@ -21,19 +22,24 @@ export default function(state = initialState, action) {
     case GET_POST:
       return {
         ...state,
-        profile: action.payload,
+        post: action.payload,
+        laoding: false
+      };
+    case GET_POSTS:
+      return {
+        ...state,
+        posts: action.payload,
         laoding: false
       };
     case ADD_POST:
       return {
         ...state,
-        profiles: action.payload,
-        laoding: [action.payload, ...state.posts]
+        posts: [action.payload, ...state.posts]
       };
     case DELETE_POST:
         return {
           ...state,
-          profile: state.posts.filter(post => post.id !== action.payload)
+          posts: state.posts.filter(post => post._id !== action.payload)
         };
     default:
       return state;

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup'
 import {addPost} from '../../actions/postActions'
 
-class PostFrom extends Component {
+class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,8 +14,8 @@ class PostFrom extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors) {
       this.setState({
         errors: newProps.errors
       });
@@ -24,7 +24,7 @@ class PostFrom extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const {} = this.props.auth;
+    const {user} = this.props.auth;
 
     const newPost = {
       text: this.state.test,
@@ -38,7 +38,7 @@ class PostFrom extends Component {
   }
 onChange(e) {
   this.setState({
-    [e.target.name]: e.target.name
+    [e.target.name]: e.target.value
   });
 }
 
@@ -81,4 +81,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps,{addPost})(PostFrom);
+export default connect(mapStateToProps,{addPost})(PostForm);
