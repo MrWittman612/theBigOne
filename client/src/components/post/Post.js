@@ -15,14 +15,14 @@ class Post extends Component {
   render() {
   const {post,loading} = this.props.post;
   let postContent;
-  if (post === null || loading || Object.key(post).length === 0) {
+  if (post === null || loading || Object.keys(post).length === 0) {
     postContent = <Spinner />;
   } else {
     postContent = (
       <div>
         <PostItem post={post} showActions={false} />
         <CommentForm postId={post._id} />
-        <CommentForm postId={post._id} comments={post.comments} />
+        <CommentFeed postId={post._id} comments={post.comments} />
       </div>
     );
   }
