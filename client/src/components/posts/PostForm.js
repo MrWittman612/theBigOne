@@ -59,7 +59,7 @@ render() {
                 error={errors.text}
               />
             </div>
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="btn btn-dark float-right">
               Submit
             </button>
           </form>

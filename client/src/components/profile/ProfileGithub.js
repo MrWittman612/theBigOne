@@ -6,8 +6,8 @@ class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientId: 'da2db6f4ef18fc3db40f',
-      clientSecret: '8b00e3f7c6dd0e80414c1d860a8d1336d9f05bc0',
+      clientId: process.env.githubCientId,
+      clientSecret: process.env.githubClientSecret,
       count: 5,
       sort: 'creatd: asc',
       repos: []
@@ -41,20 +41,20 @@ render() {
       <div className="row">
         <div className="col-md-6">
           <h4>
-            <Link to={repo.html_url} className="text-info" target="_blank">
+            <Link to={repo.html_url} className="text-info text-decoration-none" target="_blank">
               {repo.name}
             </Link>
           </h4>
           <p>{repo.description}</p>
         </div>
-        <div className="col-md-6">
-          <span className="badge badge-info mr-1">
+        <div className="col-md-6 float-right">
+          <span className="badge badge-info mr-1 float-right">
             Stars: {repo.stargazers_count}
           </span>
-          <span className="badge badge-secondary mr-1">
+          <span className="badge badge-secondary mr-1 float-right">
             Watchers: {repo.watchers_count}
           </span>
-          <span className="badge badge-success">
+          <span className="badge badge-success float-right">
             Forks: {repo.forks_count}
           </span>
         </div>
