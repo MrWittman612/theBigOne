@@ -86,7 +86,7 @@ this.props.registerUser(newUser, this.props.history);
                   <TextFieldGroup
                 placeholder="Confirm Password"
                 name="password2"
-                type="password2"
+                type="password"
                 value={this.state.password2}
                 onChange={this.onChange}
                 error={errors.password2}

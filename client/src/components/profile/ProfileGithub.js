@@ -23,6 +23,8 @@ class ProfileGithub extends Component {
       `https://api.github.com/users/${username}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&clients_secret=${clientSecret}`
     )
     .then(res => res.json())
+    // .then(console.log(this.state))
+
     .then(data => {
       if (this.refs.myRef) {
         this.setState({
@@ -54,7 +56,7 @@ render() {
           <span className="badge badge-secondary mr-1 float-right">
             Watchers: {repo.watchers_count}
           </span>
-          <span className="badge badge-success float-right">
+          <span className="badge badge-success mr-1 float-right">
             Forks: {repo.forks_count}
           </span>
         </div>
