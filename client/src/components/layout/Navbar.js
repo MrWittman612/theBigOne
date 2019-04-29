@@ -54,7 +54,7 @@ const guestLinks = (
       </Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link" to="/login">
+      <Link className="nav-link" style={{padding:'1rem 1.5rem'}} to="/login">
         Login
       </Link>
     </li>
