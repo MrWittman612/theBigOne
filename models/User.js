@@ -20,7 +20,10 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  // github: {
+  //
+  // }
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
