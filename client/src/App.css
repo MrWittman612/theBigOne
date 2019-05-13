@@ -6,6 +6,10 @@ img {
 	width: 100%;
 }
 
+.navbar {
+	z-index: 1;
+}
+
 .landing {
 	position: relative;
 	background: url('./img/showcase.jpg') no-repeat;
