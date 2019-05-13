@@ -133,7 +133,7 @@ img {
 /* login form */
 
 .login {
-	height: 1000px;
+	height: 100vh;
 	background: #8d66c0 url('./img/gregory-hayes-1064818-unsplash.jpg');
 	background-size: cover;
 	position: relative;
