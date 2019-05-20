@@ -6,7 +6,7 @@ This is a app I made following along with a Traversy Media tutorial
 
 This app requires [Node.js](https://nodejs.org/) v4+ to run.
 
-Install the dependencies and devDependencies and start the server.
+Clone this repo and run the build script then start the app locally.
 
 ```sh
 $ git clone https://github.com/1sfaccia1/theBigOne.git
