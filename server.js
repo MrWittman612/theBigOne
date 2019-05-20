@@ -8,6 +8,7 @@ const path = require('path');
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
+const github = require("./routes/api/github");
 
 const app = express();
 // Body parser middleware
@@ -26,9 +27,13 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 
+
+
+
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
+app.use('/auth/github', github);
 
 if (process.env.NODE_ENV === 'production') {
   // app.use('/static', express.static(path.join(__dirname, 'client/build')));
