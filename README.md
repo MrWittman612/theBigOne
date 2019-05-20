@@ -2,7 +2,7 @@
 
 This is a app I made following along with a Traversy Media tutorial
 
-####Inline code
+#### Inline code
 
 `$ npm install`
 
