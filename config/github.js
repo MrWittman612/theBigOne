@@ -12,8 +12,16 @@ module.exports = passport => {
 				callbackURL: 'http://127.0.0.1:9000/auth/github/callback'
 			},
 			function(accessToken, refreshToken, profile, cb) {
-				User.findOrCreate({ githubId: profile.id }, function(err, user) {
-					return cb(err, user);
+				User.findOrCreate({ githubId: profile.id }, function(
+					accessToken,
+					refreshToken,
+					profile,
+					cb
+				) {
+					console.log(accessToken);
+					console.log(refreshToken);
+					console.log(profile);
+					return cb(null, profile);
 				});
 			}
 		)
