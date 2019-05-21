@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
-const GitHubStrategy = require('passport-github').Strategy;
 
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
@@ -25,21 +24,6 @@ mongoose
 app.use(passport.initialize());
 
 require('./config/passport')(passport);
-
-passport.use(
-	new GitHubStrategy(
-		{
-			clientID: GITHUB_CLIENT_ID,
-			clientSecret: GITHUB_CLIENT_SECRET,
-			callbackURL: 'http://127.0.0.1:3000/auth/github/callback'
-		},
-		function(accessToken, refreshToken, profile, cb) {
-			User.findOrCreate({ githubId: profile.id }, function(err, user) {
-				return cb(err, user);
-			});
-		}
-	)
-);
 
 app.use('/api/users', users);
 app.use('/api/profile', profile);
