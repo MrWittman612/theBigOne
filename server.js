@@ -23,6 +23,7 @@ mongoose
 
 app.use(passport.initialize());
 
+require('.config/github')(passport);
 require('./config/passport')(passport);
 
 app.use('/api/users', users);

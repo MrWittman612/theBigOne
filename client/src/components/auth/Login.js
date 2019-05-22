@@ -52,7 +52,7 @@ class Login extends Component {
 				<form noValidate onSubmit={this.onSubmit}>
 					<h2 className="sr-only">Login Form</h2>
 					<div className="illustration">
-						<i class="fa fa-paw" aria-hidden="true" />
+						<i className="fa fa-paw" aria-hidden="true" />
 					</div>
 					<TextFieldGroup
 						placeholder="Email Address"

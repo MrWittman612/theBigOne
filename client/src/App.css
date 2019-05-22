@@ -56,7 +56,7 @@ img {
 .register-photo .image-holder {
 	display: table-cell;
 	width: auto;
-	background: url('dt-mpls.jpg');
+	background: url('./img/dt-mpls.jpg');
 	background-size: cover;
 }
 
