@@ -9,7 +9,7 @@ module.exports = passport => {
 			{
 				clientID: keys.githubClientId,
 				clientSecret: keys.githubClientSecret,
-				callbackURL: 'http://127.0.0.1:9000/auth/github/callback'
+				callbackURL: 'http://localhost:9000/auth/github/callback'
 			},
 			function(accessToken, refreshToken, profile, cb) {
 				User.findOrCreate({ githubId: profile.id }, function(
