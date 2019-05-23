@@ -1,5 +1,6 @@
 body {
-	margin-bottom: 100px !important;
+	margin: 0;
+	padding: 0;
 }
 
 img {
@@ -106,7 +107,7 @@ img {
 }
 
 .register-photo form .btn-primary {
-	background: #f4476b;
+	background: #d3d9dd;
 	border: none;
 	border-radius: 4px;
 	padding: 11px;
@@ -138,7 +139,7 @@ img {
 
 .login {
 	height: 100vh;
-	background: #8d66c0 url('./img/gregory-hayes-1064818-unsplash.jpg');
+	background: url('./img/gregory-hayes-1064818-unsplash.jpg');
 	background-size: cover;
 	position: relative;
 }
