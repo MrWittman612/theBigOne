@@ -58,131 +58,52 @@ class AddExperience extends Component {
 	render() {
 		const { errors } = this.state;
 		return (
-      <section style="height: 100%;padding: 47px;">
-        <div
-          className="container border rounded shadow-lg profile profile-view"
-          id="profile"
-          style="background-color: #668291;color: rgb(236,241,245);font-family: Roboto, sans-serif;"
-        >
-          <div className="row">
-            <div className="col-md-12 alert-col relative">
-              <div className="alert alert-info absolue center" role="alert">
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="alert"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">×</span></button
-                ><span>Profile save with success</span>
-              </div>
-            </div>
-          </div>
-          <form>
-            <div className="form-row profile-row">
-              <div className="col-md-4 relative">
-                <div
-                  className="d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-md-center justify-content-lg-center avatar"
-                >
-                  <i
-                    className="fa fa-handshake-o d-xl-flex justify-content-xl-center"
-                    style="font-size: 115px;margin: 0px auto;"
-                  ></i>
-                </div>
-              </div>
-              <div className="col-md-8">
-                <h1 style="margin-bottom: 0px;">Add Experience</h1>
-                <h5 style="padding-left: 4px;">
-                  <br />* = required fields<br /><br />
-                </h5>
-                <hr />
-                <div className="form-row">
-                  <div className="col-sm-12 col-md-6">
-                    <div className="form-group">
-                      <label /> Company
-                      <TextFieldGroup
-                        placeholder="* Company"
-                        name="company"
-                        value={this.state.company}
-                        onChange={this.onChange}
-                        error={errors.company}
-                      />
+			<section style="height: 100%;padding: 47px;">
+				<div class="container border rounded shadow-lg profile profile-view" id="profile" style="background-color: #668291;color: rgb(236,241,245);font-family: Roboto, sans-serif;">
+					<div class="row">
+						<div class="col-md-12 alert-col relative">
+							<div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+						</div>
+					</div>
+					<form>
+						<div class="form-row profile-row">
+							<div class="col-md-4 relative">
+								<div class="d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-md-center justify-content-lg-center avatar"><i class="fa fa-handshake-o d-xl-flex justify-content-xl-center" style="font-size: 115px;margin: 0px auto;"></i></div>
+							</div>
+							<div class="col-md-8">
+								<h1 style="margin-bottom: 0px;">Add Experience</h1>
+								<h5 style="padding-left: 4px;"><br>* = required fields<br><br></h5>
+									<hr>
+										<div class="form-row">
+											<div class="col-sm-12 col-md-6">
+												<div class="form-group"><label>Company</label><input class="form-control" type="text" name="firstname"></div>
+												</div>
+												<div class="col-sm-12 col-md-6">
+													<div class="form-group"><label>Job Title</label><input class="form-control" type="text" name="lastname"></div>
+													</div>
+												</div>
+												<div class="form-group"><label>Location</label><input class="form-control" type="text"></div>
+													<div class="form-row">
+														<div class="col-sm-12 col-md-6">
+															<div class="form-group"><label>From Date</label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+															</div>
+															<div class="col-sm-12 col-md-6">
+																<div class="form-group"><label>To Date</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+																</div>
+															</div>
+															<div class="form-group">
+																<div class="form-check float-right d-xl-flex justify-content-xl-start" style="padding-top: 10px;padding-bottom: 10px;"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label d-xl-flex justify-content-xl-end" for="formCheck-1">Current Job</label></div>
+																</div>
+																<div class="form-group"><label>Job Description</label><textarea class="form-control"></textarea></div>
+																<hr>
+																	<div class="form-row">
+																		<div class="col-md-12 content-right"><button class="btn btn-primary d-flex justify-content-center form-btn" type="submit" style="background-color: rgb(26,35,85);">CANCEL </button></div>
+																	</div>
                     </div>
-                  </div>
-                  <div className="col-sm-12 col-md-6">
-                    <div className="form-group">
-                      <label>Location</label>
-                      <TextFieldGroup
-                        placeholder="* Job Title"
-                        name="title"
-                        value={this.state.title}
-                        onChange={this.onChange}
-                        error={errors.title}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label>Status</label>
-                  <TextFieldGroup
-                    placeholder="* Job Title"
-                    name="title"
-                    value={this.state.title}
-                    onChange={this.onChange}
-                    error={errors.title}
-                  /><select className="form-control"
-                  ><optgroup label="This is a group"
-                  ><option value="12" selected="">This is item 1</option
-                  ><option value="13">This is item 2</option
-                  ><option value="14">This is item 3</option></optgroup
-                    ></select
-                  >
-                </div>
-                <div className="form-group">
-                  <label>Skills</label><input className="form-control" type="text" />
-                </div>
-                <div className="form-row">
-                  <div className="col-sm-12 col-md-6">
-                    <div className="form-group">
-                      <label>Website</label
-                      ><input
-                        className="form-control"
-                        type="password"
-                        name="password"
-                        autocomplete="off"
-                        required=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-sm-12 col-md-6">
-                    <div className="form-group">
-                      <label>GitHub Username</label
-                      ><input
-                        className="form-control"
-                        type="password"
-                        name="confirmpass"
-                        autocomplete="off"
-                        required=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label>Skills</label><textarea class="form-control"></textarea>
-                </div>
-                <hr />
-                <div class="form-row">
-                  <div class="col-md-12 content-right">
-                    <button class="btn btn-danger form-btn" type="reset">
-                      CANCEL
-									</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
+															</div>
+            </form>
+													</div>
+    </section>
 
 
 
