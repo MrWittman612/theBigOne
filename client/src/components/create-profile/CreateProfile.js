@@ -147,9 +147,9 @@ class CreateProfile extends Component {
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
-                  name="handle"
                   value={this.state.handle}
                   onChange={this.onChange}
+                  name="handle"
                   error={errors.handle}
                   info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
@@ -184,7 +184,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Boston, MA)"
+                  info="City or city & state suggested (eg. Mpls, Mn)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
