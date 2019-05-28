@@ -78,8 +78,6 @@ class AddEducation extends Component {
 								<h1>Add Education</h1>
 								<h5>
 									<br />* = required fields
-									<br />
-									<br />
 								</h5>
 								<hr />
 								<div className="form-row">
