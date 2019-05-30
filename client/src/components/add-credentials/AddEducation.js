@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addEducation } from '../../actions/profileActions';
 
+import './AddEdu.css';
+
 class AddEducation extends Component {
 	constructor(props) {
 		super();
@@ -58,11 +60,10 @@ class AddEducation extends Component {
 	render() {
 		const { errors } = this.state;
 		return (
-			<section>
+			<div id="AddEdu-card">
 				<div
 					className="container border rounded shadow-lg profile profile-view"
 					id="profile"
-					// style="background-color: #668291;color: rgb(236,241,245);font-family: Roboto, sans-serif;"
 				>
 					<form onSubmit={this.onSubmit}>
 						<div className="form-row profile-row">
@@ -70,15 +71,13 @@ class AddEducation extends Component {
 								<div className="d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-md-center justify-content-lg-center avatar">
 									<i
 										className="fa fa-balance-scale d-xl-flex justify-content-xl-center"
-										// style="font-size: 115px;margin: 0px auto;"
+										id="addEduForm-mainIcon"
 									/>
 								</div>
 							</div>
 							<div className="col-md-8">
 								<h1>Add Education</h1>
-								<h5>
-									<br />* = required fields
-								</h5>
+								<h5>* = required fields</h5>
 								<hr />
 								<div className="form-row">
 									<div className="col-sm-12 col-md-6">
@@ -147,7 +146,7 @@ class AddEducation extends Component {
 								<div className="form-group">
 									<div
 										className="form-check float-right d-xl-flex justify-content-xl-start"
-										// style="padding-top: 10px;padding-bottom: 10px;"
+										id="AddEduForm"
 									>
 										<input
 											type="checkbox"
@@ -185,6 +184,7 @@ class AddEducation extends Component {
 											type="submit"
 											value="Submit"
 											className="btn btn-primary d-flex justify-content-center form-btn"
+											id="addEdu-submit-btn"
 										/>
 									</div>
 								</div>
@@ -192,7 +192,7 @@ class AddEducation extends Component {
 						</div>
 					</form>
 				</div>
-			</section>
+			</div>
 		);
 	}
 }

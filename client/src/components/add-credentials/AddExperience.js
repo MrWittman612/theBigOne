@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addExperience } from '../../actions/profileActions';
 
+import './AddExp.css';
 class AddExperience extends Component {
 	constructor(props) {
 		super();
@@ -58,145 +59,138 @@ class AddExperience extends Component {
 	render() {
 		const { errors } = this.state;
 		return (
-			<div>
-				<section>
-					{/* style="height: 100%;padding: 47px;" */}
-					<div
-						className="container border rounded shadow-lg profile profile-view"
-						id="profile"
-						// style="background-color: #668291;color: rgb(236,241,245);font-family: Roboto, sans-serif;"
-					>
-						<form onSubmit={this.onSubmit}>
-							<div className="form-row profile-row">
-								<div className="col-md-4 relative">
-									<div className="d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-md-center justify-content-lg-center avatar">
-										<i
-											className="fa fa-handshake-o d-xl-flex justify-content-xl-center"
-											// style="font-size: 115px;margin: 0px auto;"
-										/>
+			<div id="AddExp-card">
+				<div
+					className="container border rounded shadow-lg profile profile-view"
+					id="profile"
+				>
+					<form onSubmit={this.onSubmit}>
+						<div className="form-row profile-row">
+							<div className="col-md-4 relative">
+								<div className="d-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-md-center justify-content-lg-center avatar">
+									<i
+										className="fa fa-handshake-o d-xl-flex justify-content-xl-center"
+										id="addExpForm-mainIcon"
+									/>
+								</div>
+							</div>
+							<div className="col-md-8">
+								<h1>Add Experience</h1>
+								<h5>* = required fields</h5>
+								<hr />
+								<div className="form-row">
+									<div className="col-sm-12 col-md-6">
+										<div className="form-group">
+											<label>Company</label>
+
+											<TextFieldGroup
+												placeholder="* Company"
+												name="company"
+												value={this.state.company}
+												onChange={this.onChange}
+												error={errors.company}
+											/>
+										</div>
+									</div>
+									<div className="col-sm-12 col-md-6">
+										<div className="form-group">
+											<label>Job Title</label>
+
+											<TextFieldGroup
+												placeholder="* Job Title"
+												name="title"
+												value={this.state.title}
+												onChange={this.onChange}
+												error={errors.title}
+											/>
+										</div>
 									</div>
 								</div>
-								<div className="col-md-8">
-									<h1>Add Experience</h1>
-									<h5>
-										<br />* = required fields
-										<br />
-										<br />
-									</h5>
-									<hr />
-									<div className="form-row">
-										<div className="col-sm-12 col-md-6">
-											<div className="form-group">
-												<label>Company</label>
+								<div className="form-group">
+									<TextFieldGroup
+										placeholder="Location"
+										name="location"
+										value={this.state.location}
+										onChange={this.onChange}
+										error={errors.location}
+									/>
+								</div>
+								<div className="form-row">
+									<div className="col-sm-12 col-md-6">
+										<div className="form-group">
+											<label>From Date</label>
 
-												<TextFieldGroup
-													placeholder="* Company"
-													name="company"
-													value={this.state.company}
-													onChange={this.onChange}
-													error={errors.company}
-												/>
-											</div>
-										</div>
-										<div className="col-sm-12 col-md-6">
-											<div className="form-group">
-												<label>Job Title</label>
-
-												<TextFieldGroup
-													placeholder="* Job Title"
-													name="title"
-													value={this.state.title}
-													onChange={this.onChange}
-													error={errors.title}
-												/>
-											</div>
-										</div>
-									</div>
-									<div className="form-group">
-										<TextFieldGroup
-											placeholder="Location"
-											name="location"
-											value={this.state.location}
-											onChange={this.onChange}
-											error={errors.location}
-										/>
-									</div>
-									<div className="form-row">
-										<div className="col-sm-12 col-md-6">
-											<div className="form-group">
-												<label>From Date</label>
-
-												<TextFieldGroup
-													name="from"
-													type="date"
-													value={this.state.from}
-													onChange={this.onChange}
-													error={errors.from}
-												/>
-											</div>
-										</div>
-										<div className="col-sm-12 col-md-6">
-											<div className="form-group">
-												<label>To Date</label>
-
-												<TextFieldGroup
-													name="to"
-													type="date"
-													value={this.state.to}
-													onChange={this.onChange}
-													error={errors.to}
-													disabled={this.state.disabled ? 'disabled' : ''}
-												/>
-											</div>
-										</div>
-									</div>
-									<div className="form-group">
-										<div
-											className="form-check float-right d-xl-flex justify-content-xl-start"
-											// style="padding-top: 10px;padding-bottom: 10px;"
-										>
-											<input
-												className="form-check-input"
-												name="current"
-												type="checkbox"
-												value={this.state.current}
-												checked={this.state.current}
+											<TextFieldGroup
+												name="from"
+												type="date"
+												value={this.state.from}
 												onChange={this.onChange}
-												id="current"
+												error={errors.from}
 											/>
-											<label
-												htmlFor="current"
-												className="form-check-label d-xl-flex justify-content-xl-end"
-											/>
-											Current Job
 										</div>
 									</div>
-									<div className="form-group">
-										<label /> Job Description
-										<TextAreaFieldGroup
-											placeholder="Job Description"
-											name="description"
-											value={this.state.description}
+									<div className="col-sm-12 col-md-6">
+										<div className="form-group">
+											<label>To Date</label>
+
+											<TextFieldGroup
+												name="to"
+												type="date"
+												value={this.state.to}
+												onChange={this.onChange}
+												error={errors.to}
+												disabled={this.state.disabled ? 'disabled' : ''}
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="form-group">
+									<div
+										className="form-check float-right d-xl-flex justify-content-xl-start"
+										id="AddExpForm"
+									>
+										<input
+											className="form-check-input"
+											name="current"
+											type="checkbox"
+											value={this.state.current}
+											checked={this.state.current}
 											onChange={this.onChange}
-											error={errors.description}
-											info="Tell us about the position"
+											id="current"
 										/>
+										<label
+											htmlFor="current"
+											className="form-check-label d-xl-flex justify-content-xl-end"
+										/>
+										Current Job
 									</div>
-									<hr />
-									<div className="form-row">
-										<div className="col-md-12 content-right">
-											<input
-												type="submit"
-												value="Submit"
-												className="btn btn-primary d-flex justify-content-center form-btn"
-											/>
-										</div>
+								</div>
+								<div className="form-group">
+									<label /> Job Description
+									<TextAreaFieldGroup
+										placeholder="Job Description"
+										name="description"
+										value={this.state.description}
+										onChange={this.onChange}
+										error={errors.description}
+										info="Tell us about the position"
+									/>
+								</div>
+								<hr />
+								<div className="form-row">
+									<div className="col-md-12 content-right">
+										<input
+											type="submit"
+											value="Submit"
+											className="btn btn-primary d-flex justify-content-center form-btn"
+											id="addExp-submit-btn"
+										/>
 									</div>
 								</div>
 							</div>
-						</form>
-					</div>
-				</section>
+						</div>
+					</form>
+				</div>
 			</div>
 		);
 	}

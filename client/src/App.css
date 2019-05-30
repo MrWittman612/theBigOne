@@ -2,9 +2,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
-/* .main-content {
-	margin: 4rem 2.5rem;
-} */
+.main-content {
+	padding: 4rem 2.5rem;
+}
 
 img {
 	width: 100%;
@@ -212,11 +212,4 @@ img {
 
 .login form .btn-primary:active {
 	transform: translateY(1px);
-}
-
-footer {
-	position: relative;
-	bottom: 0;
-	left: 0;
-	width: 100%;
 }

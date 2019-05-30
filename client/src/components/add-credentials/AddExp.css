@@ -1,0 +1,29 @@
+#AddExp-card {
+	height: 100%;
+	padding: 47px;
+}
+
+#profile {
+	background-color: #668291;
+	color: rgb(236, 241, 245);
+	font-family: Roboto, sans-serif;
+	padding: 4em 2em 1em 2em;
+}
+
+#addExpForm-mainIcon {
+	font-size: 115px;
+	margin: 0px auto;
+}
+
+#AddExpForm {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#addExp-submit-btn {
+	background-color: rgb(26, 35, 85);
+}
+
+#addExp-submit-btn:hover {
+	background-color: rgb(31, 60, 228);
+}

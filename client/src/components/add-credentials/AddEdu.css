@@ -1,0 +1,25 @@
+#AddEdu-card {
+	height: 100%;
+	padding: 0;
+}
+
+#profile {
+	background-color: #668291;
+	color: rgb(236, 241, 245);
+	font-family: Roboto, sans-serif;
+	padding: 4em 2em 1em 2em;
+}
+
+#addEduForm-mainIcon {
+	font-size: 115px;
+	margin: 0px auto;
+}
+
+#AddEduForm {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#addEdu-submit-btn {
+	background-color: rgb(26, 35, 85);
+}
