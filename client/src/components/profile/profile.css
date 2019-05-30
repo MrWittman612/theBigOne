@@ -1,3 +1,16 @@
 #mainProfile-content {
 	min-height: 100vh;
+	padding: 1.5em 0.3em;
+}
+
+#githubUserRepoStarsBadge {
+	background-color: darkblue;
+}
+
+#githubUserRepoWatchersBadge {
+	background-color: blueviolet;
+}
+
+#githubUserRepoForksBadge {
+	background-color: rgb(61, 127, 235);
 }

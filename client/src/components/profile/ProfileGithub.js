@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import './profile.css';
 class ProfileGithub extends Component {
 	constructor(props) {
 		super(props);
@@ -41,18 +42,9 @@ class ProfileGithub extends Component {
 				<div className="row">
 					<div className="col-md-6">
 						<h4>
-							{/* <Link
-								to={repo.html_url}
-								target="_blank"
-								onClick={event => {
-									event.preventDefault();
-									window.open(this.makeHref(`${repo.html_url}`));
-								}}
-							/> */}
-
 							<Link
 								to={repo.html_url}
-								// className="text-info text-decoration-none"
+								className="text-info text-decoration-none"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -69,13 +61,22 @@ class ProfileGithub extends Component {
 						<p>{repo.description}</p>
 					</div>
 					<div className="col-md-6 float-right">
-						<span className="badge badge-info mr-1 float-right">
+						<span
+							className="badge mr-1 float-right"
+							id="githubUserRepoStarsBadge"
+						>
 							Stars: {repo.stargazers_count}
 						</span>
-						<span className="badge badge-secondary mr-1 float-right">
+						<span
+							className="badge mr-1 float-right"
+							id="githubUserRepoWatchersBadge"
+						>
 							Watchers: {repo.watchers_count}
 						</span>
-						<span className="badge badge-success mr-1 float-right">
+						<span
+							className="badge mr-1 float-right"
+							id="githubUserRepoForksBadge"
+						>
 							Forks: {repo.forks_count}
 						</span>
 					</div>

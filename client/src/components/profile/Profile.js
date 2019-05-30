@@ -54,7 +54,7 @@ class Profile extends Component {
 		}
 
 		return (
-			<div className="profile">
+			<div className="profile" id="mainProfile-content">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">{profileContent}</div>
