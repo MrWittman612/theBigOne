@@ -2,40 +2,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.main-content {
-	/* padding: 4rem 2.5rem; */
-}
-
-img {
-	width: 100%;
-}
-
-.navbar {
-	z-index: 1;
-}
-
-.landing {
-	position: relative;
-	background: url('./img/minneapolis-1632077_1920.png') no-repeat;
-	background-size: cover;
-	background-position: center;
-	height: 100vh;
-	margin-top: -24px;
-	margin-bottom: -50px;
-}
-
-.landing-inner {
-	padding-top: 80px;
-}
-
-.dark-overlay {
-	background-color: rgba(0, 0, 0, 0.7);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
+/* .main-content {
+	padding: 4rem 2.5rem;
+} */
 
 .card-form {
 	opacity: 0.9;

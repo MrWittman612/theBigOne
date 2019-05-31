@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 
+import './navbar.css';
+
 class Navbar extends Component {
 	onLogoutClick(e) {
 		e.preventDefault();
@@ -48,7 +50,11 @@ class Navbar extends Component {
 		const guestLinks = (
 			<ul className="navbar-nav ml-auto">
 				<li className="nav-item">
-					<Link className="nav-link" to="/register">
+					<Link
+						className="nav-link"
+						to="/register"
+						style={{ padding: '1rem 1.5rem' }}
+					>
 						Sign Up
 					</Link>
 				</li>
@@ -64,7 +70,7 @@ class Navbar extends Component {
 			</ul>
 		);
 		return (
-			<nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+			<nav className="navbar navbar-expand-sm" id="main-navbar">
 				<div className="container">
 					<Link className="navbar-brand" to="/">
 						MPLS DevConnect

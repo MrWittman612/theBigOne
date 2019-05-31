@@ -1,0 +1,13 @@
+#main-navbar {
+	background-color: rgb(29, 53, 77);
+	color: #8dc3e7;
+}
+
+.navbar {
+	z-index: 1;
+}
+
+.navbar-brand,
+.nav-link {
+	color: antiquewhite;
+}
