@@ -66,8 +66,8 @@
 	line-height: 40px;
 	display: inline-block;
 	text-align: center;
-	border-radius: 50%;
-	border: 1px solid rgb(32, 78, 105);
+	/* border-radius: 50%;
+	border: 1px solid rgb(32, 78, 105); */
 	margin-left: 10px;
 	margin-top: 22px;
 	color: inherit;

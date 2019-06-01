@@ -59,16 +59,16 @@ export default () => {
 							href="https://www.facebook.com/Mplsdevconnect-2316995741882135"
 							target="_blank"
 						>
-							<i className="icon ion-social-facebook" />
+							<i className="fab fa-facebook-f" />
 						</a>
-						<a href="#">
-							<i className="icon ion-social-twitter" />
+						<a href="https://www.instagram.com/mplsdevconnect/">
+							<i className="fab fa-instagram" />
 						</a>
-						<a href="#">
-							<i className="icon ion-social-snapchat" />
+						<a href="https://mplsdevconnect.slack.com" target="_blank">
+							<i className="fab fa-slack" />
 						</a>
-						<a href="#">
-							<i className="icon ion-social-instagram" />
+						<a href="https://discord.gg/g536q5" target="_blank">
+							<i className="fab fa-discord" />
 						</a>
 						<p className="copyright">
 							Copyright &copy; {new Date().getFullYear()} MPLS DevConnect
