@@ -94,6 +94,12 @@ class CreateProfile extends Component {
 		}
 	}
 
+	displaySocialInputsOnClick = () => {
+		this.setState(prevState => ({
+			displaySocialInputs: !prevState.displaySocialInputs
+		}));
+	};
+
 	onSubmit(e) {
 		e.preventDefault();
 
@@ -203,7 +209,7 @@ class CreateProfile extends Component {
 								</div>
 							</div>
 							<div class="col-md-8">
-								<h1>Create Profile</h1>
+								<h1>Edit Profile</h1>
 								<hr />
 								<div class="form-row">
 									<div class="col-sm-12 col-md-6">
@@ -319,9 +325,9 @@ class CreateProfile extends Component {
 							</div>
 						</div>
 					</form>
-					<Link to="/dashboard" className="btn btn-light">
+					{/* <Link to="/dashboard" className="btn btn-light">
 						Go Back
-					</Link>
+					</Link> */}
 				</div>
 			</div>
 
