@@ -190,6 +190,9 @@ class AddExperience extends Component {
 							</div>
 						</div>
 					</form>
+					<Link to="/dashboard" className="btn btn-light">
+						Go Back
+					</Link>
 				</div>
 			</div>
 		);
