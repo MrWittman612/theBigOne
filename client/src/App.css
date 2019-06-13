@@ -29,7 +29,7 @@ body {
 .register-photo .image-holder {
 	display: table-cell;
 	width: auto;
-	background: url('./img/gregory-hayes-1064818-unsplash.jpg');
+	background: url('dt-mpls.jpg');
 	background-size: cover;
 }
 
@@ -101,7 +101,7 @@ body {
 .register-photo form .already {
 	display: block;
 	text-align: center;
-	font-size: 12px;
+	font-size: 15px;
 	color: #6f7a85;
 	opacity: 0.9;
 	text-decoration: none;
@@ -110,8 +110,13 @@ body {
 /* login form */
 
 .login {
+<<<<<<< HEAD
 	min-height: 100vh;
 	background: url('./img/gregory-hayes-1064818-unsplash.jpg');
+=======
+	height: 100vh;
+	background: #8d66c0 url('./img/dt-mpls.jpg');
+>>>>>>> 8cf774ccc1dde55668feecafce39c97bc895f8b5
 	background-size: cover;
 	position: relative;
 }
