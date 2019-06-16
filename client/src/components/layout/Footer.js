@@ -14,6 +14,7 @@ export default () => {
 								<a
 									href="https://github.com/1sfaccia1/theBigOne"
 									target="_blank"
+									rel="noopener noreferrer"
 								>
 									GitHub
 								</a>
@@ -58,16 +59,25 @@ export default () => {
 						<a
 							href="https://www.facebook.com/Mplsdevconnect-2316995741882135"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							<i className="fab fa-facebook-f" />
 						</a>
 						<a href="https://www.instagram.com/mplsdevconnect/">
 							<i className="fab fa-instagram" />
 						</a>
-						<a href="https://mplsdevconnect.slack.com" target="_blank">
+						<a
+							href="https://mplsdevconnect.slack.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<i className="fab fa-slack" />
 						</a>
-						<a href="https://discord.gg/g536q5" target="_blank">
+						<a
+							href="https://discord.gg/g536q5"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<i className="fab fa-discord" />
 						</a>
 						<p className="copyright">

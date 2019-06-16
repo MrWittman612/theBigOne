@@ -1,7 +1,7 @@
 {
 	"name": "brad-mern-stack",
 	"version": "1.0.0",
-	"description": "social media app I made while following along on a tutail",
+	"description": "social media app I made while following along on a tutorial",
 	"main": "server.js",
 	"scripts": {
 		"client-install": "npm install --prefix client",
