@@ -1,0 +1,24 @@
+GET /api/users/current HTTP/1.1
+Host: localhost:9000
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+# Postman-Token: ef280b8b-f759-4ea6-86b6-0c82f66a979e
+
+###
+
+GET /api/users/current 
+Host: localhost:9000
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+# Postman-Token: 4c784b60-b5a4-4064-8126-a7762622027a
+
+###
+
+GET /api/profile/all HTTP/1.1
+Host: localhost:9000
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+# Postman-Token: a58b6614-bf0e-4cd0-a2f9-9a2f6d13cb05
+
+
+
