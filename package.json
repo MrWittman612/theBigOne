@@ -14,6 +14,7 @@
 	"keywords": [],
 	"author": "Chad Wittman",
 	"license": "MIT",
+	"homepage": "https://github.com/MrWittman612/theBigOne/blob/master/README.md",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",

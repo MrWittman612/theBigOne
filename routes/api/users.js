@@ -77,7 +77,7 @@ router.post("/register", (req, res) => {
 
 // @route  POST api/users/login
 // @desc   login users /  return jtw token
-// @acsess Public
+// @access Public
 
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);

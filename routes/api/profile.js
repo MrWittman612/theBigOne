@@ -92,7 +92,10 @@ router.get('/user/:user_id', (req, res) => {
 
 
 
-router.post('/', passport.authenticate('jwt', {
+router.post('/', 
+  passport
+    .authenticate('jwt', 
+    {
     session: false
   }),
   (req, res) => {
